@@ -1,0 +1,46 @@
+{
+    "industryid": 4,
+    "loginType": "INFINITY",
+    "server": {
+        "protocol": "http",
+        "host": "10.84.40.231",
+        "port": 80
+    },
+    "socketio": {
+        "host": ":10.84.40.231",
+        "port": 10190
+    },
+    "credential": {
+        "identifier": "918928509173",
+        "password": "entrib"
+    },
+    "logger": {
+        "loglevel": 50
+    },
+    "elements": {
+        "machine": "machine",
+        "maintenanceplan": "maintenanceplan",
+        "maintenancetask": "task",
+        "solutiondetail": "solutiondetail",
+        "taskdetail": "taskdetail",
+        "operatorbindmachine": "operatorbindmachine",
+        "taskoperator": "taskoperator",
+        "sparepartsinplanning": "sparepartsinplanning",
+        "replacement": "replacement",
+        "andontask": "andontask"
+    },
+    "defaults": {
+        "maxServerRetryCount": 3,
+        "retryServerTimer": 1,
+        "resetValueDealyTime": 0.5,
+        "requesttimeout": 45
+    },
+    "agentid": 1000002,
+    "tasks": {
+        "maintenance": false,
+        "andon_wechat": false,
+        "sql_push": true,
+        "sql_pull": true
+    },
+    "writeFileEncoding": "utf8"
+}

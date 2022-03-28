@@ -1,0 +1,60 @@
+{
+  "name": "schedule",
+  "version": "0.0.2",
+  "description": "Schedule Job",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "initcommit": "commitizen init cz-conventional-changelog --save --save-exact",
+    "changelog": "conventional-changelog -i CHANGELOG.md -s -r 0",
+    "commit": "git-cz",
+    "release": "standard-version",
+    "publish": "git push --follow-tags origin master && npm publish"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog",
+      "disableScopeLowerCase": false,
+      "disableSubjectLowerCase": false,
+      "maxHeaderWidth": 100,
+      "maxLineWidth": 100
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://Nebu1as@bitbucket.org/Nebu1as/schedule.git"
+  },
+  "keywords": [
+    "Cron",
+    "Schedule"
+  ],
+  "author": "Nebulas",
+  "license": "ISC",
+  "homepage": "https://bitbucket.org/Nebu1as/schedule#readme",
+  "dependencies": {
+    "axios": "^0.19.2",
+    "bree": "^5.0.0",
+    "bunyan": "^1.8.12",
+    "date-fns": "^2.17.0",
+    "email-templates": "^8.0.3",
+    "events": "^3.1.0",
+    "import-scripts": "^1.0.0",
+    "kafka-node": "^5.0.0",
+    "lodash": "^4.17.20",
+    "moment": "^2.29.1",
+    "path": "^0.12.7",
+    "querystring": "^0.2.0",
+    "sequelize": "^6.6.2",
+    "socket.io-client": "^2.3.0",
+    "tedious": "^11.0.9"
+  },
+  "devDependencies": {
+    "commitizen": "^4.2.4",
+    "conventional-changelog": "^3.1.24",
+    "cz-conventional-changelog": "^3.2.0",
+    "find": "^0.3.0",
+    "nodemon": "^2.0.4",
+    "prettier": "^2.1.2",
+    "standard-version": "^9.3.1"
+  }
+}

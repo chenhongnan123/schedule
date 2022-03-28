@@ -1,0 +1,114 @@
+{
+  "machinetags": {
+    "MACHINEID_TAG": "id",
+    "MACHINENAME_TAG": "machinename",
+    "INITCOUNT": "initcount",
+    "COUNT_TAG": "count"
+  },
+  "maintenanceplantags": {
+    "PLANID_TAG": "planid",
+    "PLANNAME_TAG": "name",
+    "MACHINEID_TAG": "machineid",
+    "MACHINENAME_TAG": "machinename",
+    "MACHINECODE_TAG": "machinecode",
+    "SOLUTION_TAG": "solutionid",
+    "SOLUTIONNAME_TAG": "solutionname",
+    "SOLUTIONTYPE_TAG": "solutiontype",
+    "TYPE_TAG": "type",
+    "ALLTASK_TAG": "alltask",
+    "TASKINPROGRESS_TAG": "taskinprogress",
+    "TASKCOMPLETED_TAG": "taskcompleted",
+    "STATUS_TAG": "status",
+    "LASTTRIGGER_TAG": "lasttrigger",
+    "DURATION_TAG": "duration",
+    "CRON_TAG": "cron"
+  },
+  "maintenancetasktags": {
+    "TASKID_TAG": "id",
+    "PLANID_TAG": "planid",
+    "PLANNAME_TAG": "planname",
+    "MACHINEID_TAG": "machineid",
+    "MACHINENAME_TAG": "machinename",
+    "MACHINECODE_TAG": "machinecode",
+    "SOLUTION_TAG": "solutionid",
+    "SOLUTIONNAME_TAG": "solutionname",
+    "SOLUTIONTYPE_TAG": "solutiontype",
+    "STATUS_TAG": "status",
+    "CREATEDTIME": "createdtime",
+    "TYPE_TAG": "type",
+    "PLANSTARTTIME_TAG": "planstarttime",
+    "PLANDATE_TAG": "plandate",
+    "PLANENDTIME_TAG": "planendtime",
+    "TASKTRIGGER_TAG": "tasktrigger"
+  },
+  "taskdetailtags": {
+    "TASKID_TAG": "taskid",
+    "SOLUTION_TAG": "solutionid",
+    "SOLUTIONNAME_TAG": "solutionname",
+    "SOLUTIONDETAILNAME_TAG": "solutiondetailname",
+    "DESCRIPTION_TAG": "description",
+    "GROUP_TAG": "group",
+    "ISLIMITED_TAG": "islimited",
+    "LOWER_TAG": "lower",
+    "RESULT_TAG": "result",
+    "TYPE_TAG": "type",
+    "UPPER_TAG": "upper",
+    "VALUE_TAG": "value",
+    "IMAGE_TAG": "image"
+  },
+  "solutiondetailtags": {
+    "SOLUTION_TAG": "solutionid",
+    "SOLUTIONNAME_TAG": "solutionname",
+    "NAME_TAG": "name",
+    "DESCRIPTION_TAG": "description",
+    "GROUP_TAG": "group",
+    "ISLIMITED_TAG": "islimited",
+    "LOWER_TAG": "lower",
+    "TYPE_TAG": "type",
+    "UPPER_TAG": "upper",
+    "IMAGE_TAG": "image"
+  },
+  "operatorbindmachinetags": {
+    "OPERATORID_TAG": "operatorid",
+    "OPERATORNAME_TAG": "operatorname",
+    "MACHINEID_TAG": "machineid",
+    "MACHINENAME_TAG": "machinename"
+  },
+  "taskoperatortags": {
+    "TASKID_TAG": "taskid",
+    "PLANID_TAG": "planid",
+    "PLANNAME_TAG": "planname",
+    "OPERATORID_TAG": "operatorid",
+    "OPERATORNAME_TAG": "operatorname"
+  },
+  "sparepartsinplanningtags": {
+    "PLANID_TAG": "planid",
+    "SPAREPARTID_TAG": "sparepartid",
+    "SPAREPARTNAME_TAG": "sparepartname",
+    "MACHINEPOSITIONID_TAG": "machinepositionid",
+    "MACHINEPOSITIONNAME_TAG": "machinepositionname",
+    "MACHINEID_TAG": "machineid",
+    "MACHINENAME_TAG": "machinename",
+    "UPPER_TAG": "upper",
+    "LOWER_TAG": "lower"
+  },
+  "replacementtags" : {
+    "TASKID_TAG": "taskid",
+    "SPAREPARTID_TAG": "sparepartid",
+    "SPAREPARTNAME_TAG": "sparepartname",
+    "MACHINEPOSITIONID_TAG": "machinepositionid",
+    "MACHINEPOSITIONNAME_TAG": "machinepositionname",
+    "MACHINEID_TAG": "machineid",
+    "MACHINENAME_TAG": "machinename",
+    "QUANTITY_TAG": "quantity",
+    "UPPER_TAG": "upper",
+    "LOWER_TAG": "lower"
+  },
+  "andontasktags": {
+    "ID_TAG": "taskid",
+    "ALERTROLE_TAG": "alertrole",
+    "CLOCK_TAG": "clock",
+    "STATUS_TAG": "status",
+    "CONTEXT_TAG": "context"
+  }
+}

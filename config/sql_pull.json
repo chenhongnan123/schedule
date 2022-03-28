@@ -1,0 +1,71 @@
+{
+	"dbConnectors": [
+		{
+			"dbConnectorName": "swx-pull-mechanism",
+			"dbConnectorImpl": "generic",
+			"appConnectorImpl": "swx-pull",
+			"props": {
+				"database": "MES_Interface",
+				"username": "kai.guo",
+				"password": "P4ssw0rd2021!",
+				"hostname": "10.5.120.157",
+				"port": "1433",
+				"dialect": "mssql",
+				"connectionTimeout": 300000,
+				"requestTimeout": 300000,
+				"pool": {
+					"idleTimeoutMillis": 300000,
+					"max": 100
+				}
+			}
+		}
+	],
+	"schemaSWXPull": [
+		{
+			"tableName": "ProductionOrdersStarted",
+			"kafka": {
+                                "host": "10.84.40.231",
+				"topic_name": "order",
+				"port": 10089,
+				"fetchMinBytes": 1,
+				"fetchMaxBytes": 750,
+				"fromOffset": "latest",
+				"outOfRangeOffset": "earliest",
+				"autoCommit": true,
+				"autoCommitIntervalMs": 100
+			},
+			"dbConnectorName": "swx-pull-mechanism",
+			"mappings": {
+				"OrderID": {
+					"field": "ordername"
+				},
+				"DateStart": {
+					"field": "orderruntime",
+					"transformDate": true,
+					"timestamp": false,
+					"dateFormat": "YYYY-MM-DD HH:mm:ss.SSS"
+				}
+			},
+			"schema": {
+				"OrderID": {
+					"type": "string"
+				},
+				"DateStart": {
+					"type": "date",
+					"allowNull": true,
+					"dateFormat": "DD-MM-YYYY:HH:mm:ss",
+					"utc": true,
+                                         "primaryKey": true
+				}
+			},
+			"removeFromPayload": {},
+			"conditions": [
+				{
+					"field": "orderstatus",
+					"type": "=",
+					"value": "Running"
+				}
+			]
+		}
+	]
+}

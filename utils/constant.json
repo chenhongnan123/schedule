@@ -1,0 +1,55 @@
+{
+  "maintenanceplanstatus": {
+    "ENABLE": "enable",
+    "UNABLE": "unable"
+  },
+  "maintenanceplantype": {
+    "TBM": "TBM",
+    "CBM": "CBM"
+  },
+  "SEQUELIZE_DATATYPE": {
+    "STRING": "string",
+    "TEXT": "text",
+    "TINY_TEXT": "tinyText",
+    "TEXT_ARRAY": "textArray",
+    "CITEXT": "citext",
+    "INTEGER": "integer",
+    "BIGINT": "bigint",
+    "FLOAT": "float",
+    "REAL": "real",
+    "DOUBLE": "double",
+    "DECIMAL": "decimal",
+    "DATE": "date",
+    "BOOLEAN": "boolean",
+    "JSON_TYPE": "json",
+    "JSONB": "jsonb",
+    "INTEGER_RANGE": "integerRange",
+    "BIGINT_RANGE": "bigIntRange",
+    "DATE_RANGE": "dateRange",
+    "DATEONLY_RANGE": "dateonlyRange",
+    "DECIMAL_RANGE": "decimalRange"
+  },
+  "SEQUELIZE_KEYS_TYPE": "type",
+  "SEQUELIZE_KEYS_PRIMARYKEY": "primaryKey",
+  "SEQUELIZE_KEYS_AUTOINCREMENT": "autoIncrement",
+  "SEQUELIZE_KEYS_ALLOWNULL": "allowNull",
+  "SEQUELIZE_KEYS_DATE_FORMAT": "dateFormat",
+  "SEQUELIZE_KEYS_GET": "get",
+  "SEQUELIZE_KEYS_UTC": "utc",
+  "SEQUELIZE_KEYS": [
+    "type",
+    "primaryKey",
+    "autoIncrement",
+    "allowNull",
+    "dateFormat",
+    "utc"
+  ],
+  "SEQUELIZE_KEYS_DATATYPE": {
+    "type": "string",
+    "primaryKey": "boolean",
+    "autoIncrement": "boolean",
+    "allowNull": "boolean",
+    "dateFormat": "string",
+    "utc": "boolean"
+  }
+}

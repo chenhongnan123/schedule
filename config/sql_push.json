@@ -1,0 +1,199 @@
+{
+	"dbConnectors": [
+		{
+			"dbConnectorName": "swx-push-mechanism",
+			"dbConnectorImpl": "generic",
+			"appConnectorImpl": "swx-push",
+			"props": {
+				"database": "MES_Interface",
+				"username": "kai.guo",
+				"password": "P4ssw0rd2021!",
+				"hostname": "10.5.120.157",
+				"port": "1433",
+				"dialect": "mssql",
+				"connectionTimeout": 300000,
+				"requestTimeout": 300000,
+				"pool": {
+					"idleTimeoutMillis": 300000,
+					"max": 100
+				}
+			}
+		}
+	],
+	"schemaSWXPush": [
+		{
+			"cron": "*/10 * * * * *",
+			"limit": 1,
+			"tableName": "ProductionOrders",
+			"elementName": "order",
+			"dbConnectorName": "swx-push-mechanism",
+			"mappings": {
+				"ordername": {
+					"field": "OrderID"
+				},
+				"productname": {
+					"field": "Material"
+				},
+				"productiondescription": {
+					"field": "MaterialDescription"
+				},
+				"status": {
+					"field": "STATUS"
+				},
+				"targetcount": {
+					"field": "Quantity"
+				},
+				"scheduledstart": {
+					"field": "DateStart",
+					"transformDate": true,
+					"timestamp": true,
+					"dateFormat": "DD-MM-YYYY:HH:mm:ss"
+				},
+				"scheduledend": {
+					"field": "DateEnd",
+					"transformDate": true,
+					"timestamp": true,
+					"dateFormat": "DD-MM-YYYY:HH:mm:ss"
+				},
+				"ordercreatedtime": {
+					"field": "crdt",
+					"transformDate": true,
+					"timestamp": true,
+					"dateFormat": "DD-MM-YYYY:HH:mm:ss"
+				}
+			},
+			"lagLimit": -1,
+			"waitBeforeInsert": 3,
+			"isInsertOnLimitMatch": true,
+			"v2timestampKey": "",
+			"removeFromPayload": [],
+			"schema": {
+				"OrderID": {
+					"type": "float"
+				},
+				"Material": {
+					"type": "string"
+				},
+				"MaterialDescription": {
+					"type": "string"
+				},
+				"STATUS": {
+					"type": "string"
+				},
+				"Quantity": {
+					"type": "integer"
+				},
+				"DateStart": {
+					"type": "date",
+					"allowNull": true,
+					"dateFormat": "DD-MM-YYYY:HH:mm:ss",
+					"utc": true
+				},
+				"DateEnd": {
+					"type": "date",
+					"allowNull": true,
+					"dateFormat": "DD-MM-YYYY:HH:mm:ss",
+					"utc": true
+				},
+				"crdt": {
+					"type": "date",
+					"allowNull": true,
+					"dateFormat": "DD-MM-YYYY:HH:mm:ss",
+					"utc": true,
+					"primaryKey": true
+				}
+			},
+			"defaultMappings": {
+				"assetid": 4,
+				"lineid": 1,
+				"linename": "Meta",
+				"orderstatus": "New",
+				"ordertype": "Normal",
+				"visible": true
+			}
+		},
+    {
+			"cron": "*/10 * * * * *",
+			"limit": 1,
+			"tableName": "ProductionOrdersBom",
+			"elementName": "metabom",
+			"dbConnectorName": "swx-push-mechanism",
+			"mappings": {
+				"ordername": {
+					"field": "OrderID"
+				},
+				"itemnr": {
+					"field": "ItemNr"
+				},
+				"material": {
+					"field": "Material"
+				},
+        "materialcomponent": {
+					"field": "MaterialComponent"
+				},
+        "componentdescription": {
+					"field": "ComponentDescription"
+				},
+        "quantitycomponent": {
+					"field": "QuantityComponent"
+				},
+        "station": {
+          "field": "Station"
+        },
+				"status": {
+					"field": "STATUS"
+				},
+				"flowstatus": {
+					"field": "FLOWSTATUS"
+				},
+				"createdtime": {
+					"field": "crdt",
+					"transformDate": true,
+					"timestamp": true,
+					"dateFormat": "DD-MM-YYYY:HH:mm:ss"
+				}
+			},
+			"lagLimit": -1,
+			"waitBeforeInsert": 3,
+			"isInsertOnLimitMatch": true,
+			"v2timestampKey": "",
+			"removeFromPayload": [],
+			"schema": {
+				"OrderID": {
+					"type": "string"
+				},
+        "ItemNr": {
+					"type": "string"
+				},
+				"Material": {
+					"type": "string"
+				},
+				"MaterialComponent": {
+					"type": "string"
+				},
+        "ComponentDescription": {
+					"type": "string"
+				},
+				"QuantityComponent": {
+					"type": "float"
+				},
+        "Station": {
+					"type": "string"
+				},
+        "FLOWSTATUS": {
+					"type": "integer"
+				},
+				"crdt": {
+					"type": "date",
+					"allowNull": true,
+					"dateFormat": "DD-MM-YYYY:HH:mm:ss",
+					"utc": true,
+					"primaryKey": true
+				}
+			},
+			"defaultMappings": {
+				"assetid": 0
+			}
+		}
+	]
+}

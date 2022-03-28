@@ -1,0 +1,131 @@
+{
+	"dbConnectors": [
+		{
+			"dbConnectorName": "swx-push-mechanism",
+			"dbConnectorImpl": "generic",
+			"appConnectorImpl": "swx-push",
+			"props": {
+				"database": "UFDATA_990_2015",
+				"username": "mes",
+				"password": "abc.123",
+				"hostname": "192.168.0.21",
+				"port": "1433",
+				"dialect": "mssql",
+				"connectionTimeout": 300000,
+				"requestTimeout": 300000,
+				"pool": {
+					"idleTimeoutMillis": 300000,
+					"max": 100
+				}
+			}
+		}
+	],
+	"schemaSWXPush": [
+		{
+			"cron": "*/5 * * * * *",
+			"limit": 1,
+			"tableName": "mes_inventory",
+			"elementName": "part",
+			"dbConnectorName": "swx-push-mechanism",
+			"mappings": {
+				"partdescription": "partdescription",
+				"partnumber": "partnumber",
+				"partname": "partname",
+				"assetid": "assetid",
+				"status": "status",
+				"erpid": "id"
+			},
+			"lagLimit": -1,
+			"waitBeforeInsert": 3,
+			"isInsertOnLimitMatch": true,
+			"v2timestampKey": "",
+			"removeFromPayload": [],
+			"schema": {
+				"id": {
+					"type": "float",
+					"primaryKey": true
+				},
+				"partdescription": {
+					"type": "string"
+				},
+				"partnumber": {
+					"type": "string"
+				},
+				"partname": {
+					"type": "string"
+				},
+				"status": {
+					"type": "string"
+				},
+				"assetid": {
+					"type": "float"
+				}
+			}
+		},
+		{
+			"cron": "*/5 * * * * *",
+			"limit": 1,
+			"tableName": "mes_plan",
+			"elementName": "erpplan",
+			"dbConnectorName": "swx-push-mechanism",
+			"mappings": {
+				"modid": "modid",
+				"productionnumber": "productionnumber",
+				"partdescription": "partdescription",
+				"partnumber": "partnumber",
+				"partname": "partname",
+				"assetid": "assetid",
+				"status": "status",
+				"erpid": "id",
+				"quantity": "quantity",
+				"plannedstartdate": "plannedstartdate",
+				"plannedenddate": "plannedenddate",
+				"remainedquantity": "quantity"
+			},
+			"lagLimit": -1,
+			"waitBeforeInsert": 3,
+			"isInsertOnLimitMatch": true,
+			"v2timestampKey": "",
+			"removeFromPayload": [],
+			"schema": {
+				"id": {
+					"type": "float",
+					"primaryKey": true
+				},
+				"modid": {
+					"type": "float"
+				},
+				"productionnumber": {
+					"type": "string"
+				},
+				"partdescription": {
+					"type": "string"
+				},
+				"partnumber": {
+					"type": "string"
+				},
+				"partname": {
+					"type": "string"
+				},
+				"status": {
+					"type": "string"
+				},
+				"quantity": {
+					"type": "float"
+				},
+				"plannedstartdate": {
+					"type": "date",
+					"allowNull": true,
+					"dateFormat": "DD-MM-YYYY:HH:mm:ss",
+					"utc": true
+				},
+				"plannedenddate": {
+					"type": "date",
+					"allowNull": true,
+					"dateFormat": "DD-MM-YYYY:HH:mm:ss",
+					"utc": true
+				}
+			}
+		}
+	]
+}
